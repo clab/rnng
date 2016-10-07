@@ -2,9 +2,9 @@
 Code for the Recurrent Neural Network Grammars paper (NAACL 2016), by Chris Dyer, Adhiguna Kuncoro, Miguel Ballesteros, and Noah A. Smith. The code is written in C++.
 
 # Prerequisites
-cmake version 2.8+ \\
-The latest development version of Eigen \\
-C++ compiler (supporting the C++11 language standard) \\
+cmake version 2.8+   
+The latest development version of Eigen   
+C++ compiler (supporting the C++11 language standard)   
 Boost libraries
 
 # Build instructions
@@ -20,7 +20,7 @@ Assuming the latest development version of Eigen is stored at: /opt/tools/eigen-
 sample\_input\_english.txt (English PTB) and sample\_input\_chinese.txt (Chinese CTB)
 
 # Oracles
-The oracle converts the bracketed phrase-structure tree into a sequence of actions. \\ 
+The oracle converts the bracketed phrase-structure tree into a sequence of actions.     
 The script to obtain the oracle also converts singletons in the training set and unknown words in the dev and test set into a fine-grained set of 'UNK' symbols 
 
 ### Obtaining the oracle for the discriminative model
@@ -34,7 +34,7 @@ The script to obtain the oracle also converts singletons in the training set and
     python get_oracle_gen.py [training file] [test file] > test_gen.oracle
 
 # Discriminative Model
-The discriminative variant of the RNNG is used as a proposal distribution for decoding the generative model (although it can also be used for decoding on its own). To save time we recommend training both models in parallel\\
+The discriminative variant of the RNNG is used as a proposal distribution for decoding the generative model (although it can also be used for decoding on its own). To save time we recommend training both models in parallel   
 On the English PTB dataset the discriminative model typically converges after about 3 days on a single-core CPU device. 
 
 ### Training the discriminative model
