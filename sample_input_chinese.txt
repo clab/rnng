@@ -1,0 +1,3 @@
+(IP (NP (NP (NR 上海) (NR 浦东)) (NP (NN 开发) (CC 与) (NN 法制) (NN 建设))) (VP (VV 同步)))
+(FRAG (NN 新华社) (NR 上海) (NT 二月) (NT 十日) (NN 电) (PU （) (NN 记者) (NR 谢金虎) (PU 、) (NR 张持坚) (PU ）))
+(IP (NP (NR 上海) (NR 浦东)) (VP (VP (LCP (NP (NT 近年)) (LC 来)) (VP (VCD (VV 颁布) (VV 实行)) (AS 了) (NP (CP (IP (VP (VV 涉及) (NP (NP (NN 经济) (PU 、) (NN 贸易) (PU 、) (NN 建设) (PU 、) (NN 规划) (PU 、) (NN 科技) (PU 、) (NN 文教) (ETC 等)) (NP (NN 领域))))) (DEC 的)) (QP (CD 七十一) (CLP (M 件))) (NP (NN 法规性) (NN 文件))))) (PU ，) (VP (VV 确保) (AS 了) (NP (DNP (NP (NP (NR 浦东)) (NP (NN 开发))) (DEG 的)) (ADJP (JJ 有序)) (NP (NN 进行))))) (PU 。))
