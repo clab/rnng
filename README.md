@@ -17,7 +17,7 @@ Assuming the latest development version of Eigen is stored at: /opt/tools/eigen-
 
     
 # Sample input format: 
-`sample\_input\_english.txt` (English PTB) and `sample\_input\_chinese.txt` (Chinese CTB)
+`sample_input_english.txt` (English PTB) and `sample_input_chinese.txt` (Chinese CTB)
 
 # Oracles
 The oracle converts the bracketed phrase-structure tree into a sequence of actions.     
@@ -48,7 +48,7 @@ The training log is printed to `log.txt` (including information on where the par
 
     build/nt-parser/nt-parser --cnn-mem 1700 -x -T [training_oracle_file] -p [test_oracle_file] -C [original_test_file (PTB bracketed format, see sample_input_english.txt)] -P --pretrained_dim [dimension of pre-trained word embedding] -w [pre-trained word embedding] --lstm_input_dim 128 --hidden_dim 128 -m [parameter file] > output.txt
 
-Note: the output will be stored in `/tmp/parse/parser\_test\_eval.xxxx.txt` and the parser will output F1 score calculated with EVALB with COLLINS.prm option. The parameter file (following the -m in the command above) can be obtained from `log.txt`.       
+Note: the output will be stored in `/tmp/parse/parser_test_eval.xxxx.txt` and the parser will output F1 score calculated with EVALB with COLLINS.prm option. The parameter file (following the -m in the command above) can be obtained from `log.txt`.       
 
 If training was done using pre-trained word embedding (by specifying the -w and --pretrained\_dim options) or POS tags (-P option), then decoding must alo use the exact same options used for training.
 
@@ -59,7 +59,7 @@ For the best results the generative model takes about 7 days to converge.
 ### Training the generative model
     nohup build/nt-parser/nt-parser-gen -x -T [training_oracle_generative] -d [dev_oracle_generative] -t --clusters clusters-train-berk.txt --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -D 0.3 > log_gen.txt
 
-The training log is printed to `log\_gen.txt`, including information on where the parameters of the model is saved to, which is used for decoding later.
+The training log is printed to `log_gen.txt`, including information on where the parameters of the model is saved to, which is used for decoding later.
 
 # Decoding with the generative model
 Decoding with the generative model requires sample trees from the trained discriminative model
@@ -97,5 +97,5 @@ The file `llh.txt` would contain the final language modeling perplexity after ma
     utils/remove_dev_unk.py [gold trees on the test set (same format as sample_input_english.txt)] hyp.trees > hyp_final.trees
     EVALB/evalb -p COLLINS.prm [gold trees on the test set (same format as sample_input_english.txt)] hyp_final.trees > parsing_result.txt
 
-The file `parsing\_result.txt` contains the final parsing accuracy using EVALB
+The file `parsing_result.txt` contains the final parsing accuracy using EVALB
 
