@@ -2,6 +2,12 @@
 Code for the Recurrent Neural Network Grammars paper (NAACL 2016), by Chris Dyer, Adhiguna Kuncoro, Miguel Ballesteros, and Noah A. Smith. The code is written in C++.
 
 # Prerequisites
+ * A C++ compiler supporting the [C++11 language standard](https://en.wikipedia.org/wiki/C%2B%2B11) 
+ * [Boost](http://www.boost.org/) libraries
+ * [Eigen](http://eigen.tuxfamily.org) (latest development release)
+ * [CMake](http://www.cmake.org/)
+ * [EVALB](http://nlp.cs.nyu.edu/evalb/) (latest version)
+
 cmake version 2.8+   
 The latest development version of Eigen   
 C++ compiler (supporting the C++11 language standard)   
