@@ -1076,7 +1076,7 @@ int main(int argc, char** argv) {
         double err = (trs - right) / trs;
         cerr << "Dev output in " << pfx << endl;
         //parser::EvalBResults res = parser::Evaluate("foo", pfx);
-	std::string command="python ../remove_dev_unk.py "+ corpus.devdata +" "+pfx+" > evaluable.txt";
+	std::string command="python remove_dev_unk.py "+ corpus.devdata +" "+pfx+" > evaluable.txt";
 	const char* cmd=command.c_str();
 	system(cmd);
 
@@ -1208,7 +1208,7 @@ int main(int argc, char** argv) {
         double err = (trs - right) / trs;
         cerr << "Test output in " << pfx << endl;
         //parser::EvalBResults res = parser::Evaluate("foo", pfx);
-        std::string command="python ../remove_dev_unk.py "+ corpus.devdata +" "+pfx+" > evaluable.txt";
+        std::string command="python remove_dev_unk.py "+ corpus.devdata +" "+pfx+" > evaluable.txt";
         const char* cmd=command.c_str();
         system(cmd);
 
