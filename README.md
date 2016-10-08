@@ -50,6 +50,8 @@ On the English PTB dataset the discriminative model typically converges after ab
 
 IMPORTANT: please run the command at the same folder where `remove_dev_unk.py` is located.    
 
+If not using pre-trained word embedding, then remove the `--pretrained_dim` and `-w` flags.    
+
 The training log is printed to `log.txt` (including information on where the parameter file for the model is saved to, which is used for decoding under the -m option below)
 
 ### Decoding with discriminative model
