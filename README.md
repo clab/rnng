@@ -6,7 +6,7 @@ Code for the Recurrent Neural Network Grammars paper (NAACL 2016), by Chris Dyer
  * [Boost](http://www.boost.org/) libraries
  * [Eigen](http://eigen.tuxfamily.org) (latest development release)
  * [CMake](http://www.cmake.org/)
- * [EVALB](http://nlp.cs.nyu.edu/evalb/) (latest version)
+ * [EVALB](http://nlp.cs.nyu.edu/evalb/) (latest version. IMPORTANT: please put the EVALB folder on the same directory as `get_oracle.py` and `sample_input_chinese.txt` to ensure compatibility)
 
 cmake version 2.8+   
 The latest development version of Eigen   
