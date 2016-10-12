@@ -16,11 +16,6 @@ Code for the [Recurrent Neural Network Grammars](https://arxiv.org/abs/1602.0777
  * [CMake](http://www.cmake.org/)
  * [EVALB](http://nlp.cs.nyu.edu/evalb/) (latest version. IMPORTANT: please put the EVALB folder on the same directory as `get_oracle.py` and `sample_input_chinese.txt` to ensure compatibility)
 
-cmake version 2.8+   
-The latest development version of Eigen   
-C++ compiler (supporting the C++11 language standard)   
-Boost libraries
-
 # Build instructions
 Assuming the latest development version of Eigen is stored at: /opt/tools/eigen-dev 
 
@@ -55,6 +50,10 @@ On the English PTB dataset the discriminative model typically converges after ab
 ### Training the discriminative model
 
     nohup build/nt-parser/nt-parser --cnn-mem 1700 -x -T [training_oracle_file] -d [dev_oracle_file] -C [original_dev_file (PTB bracketed format, see sample_input_english.txt)] -P -t --pretrained_dim [dimension of pre-trained word embedding] -w [pre-trained word embedding] --lstm_input_dim 128 --hidden_dim 128 -D 0.2 > log.txt
+
+IMPORTANT: please run the command at the same folder where `remove_dev_unk.py` is located.    
+
+If not using pre-trained word embedding, then remove the `--pretrained_dim` and `-w` flags.    
 
 The training log is printed to `log.txt` (including information on where the parameter file for the model is saved to, which is used for decoding under the -m option below)
 
