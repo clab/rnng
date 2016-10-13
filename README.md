@@ -1,5 +1,5 @@
 # Recurrent Neural Network Grammars
-Code for the [Recurrent Neural Network Grammars](https://arxiv.org/abs/1602.07776) paper (NAACL 2016), by Chris Dyer, Adhiguna Kuncoro, Miguel Ballesteros, and Noah A. Smith, after the Corrigendum (last stwo pages on the ArXiv version of the paper). The code is written in C++.
+Code for the [Recurrent Neural Network Grammars](https://arxiv.org/abs/1602.07776) paper (NAACL 2016), by Chris Dyer, Adhiguna Kuncoro, Miguel Ballesteros, and Noah A. Smith, after the Corrigendum (last two pages on the ArXiv version of the paper). The code is written in C++.
 
 # Citation
 @inproceedings{dyer-rnng:16,
