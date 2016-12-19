@@ -113,4 +113,7 @@ The file `llh.txt` would contain the final language modeling perplexity after ma
 The file `parsing_result.txt` contains the final parsing accuracy using EVALB
 
 # Contact
-If there are any issues, please let us know at adhiguna.kuncoro [ AT SYMBOL ] gmail [ DOT ] com
+If there are any issues, please let us know at adhiguna.kuncoro [ AT SYMBOL ] gmail.com, miguel.ballesteros [AT SYMBOL] ibm.com, and cdyer [AT SYMBOL] cs.cmu.edu
+
+# License 
+This software is released under the terms of the [Apache License, Version 2.0] (http://www.apache.org/licenses/LICENSE-2.0) 
