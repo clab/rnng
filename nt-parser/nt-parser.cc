@@ -458,12 +458,14 @@ vector<unsigned> log_prob_parser(ComputationGraph* hg,
         // TO BE COMPOSED INTO A TREE EMBEDDING
         for (i = 0; i < nchildren; ++i) {
           children[i] = stack.back();
+          assert (stacki.back() != -1);
           stacki.pop_back();
           stack.pop_back();
           stack_lstm.rewind_one_step();
           is_open_paren.pop_back();
         }
 	is_open_paren.pop_back(); // nt symbol
+        assert (stacki.back() == -1);
         stacki.pop_back(); // nonterminal dummy
         stack.pop_back(); // nonterminal dummy
         stack_lstm.rewind_one_step(); // nt symbol
