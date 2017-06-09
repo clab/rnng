@@ -112,6 +112,21 @@ The file `llh.txt` would contain the final language modeling perplexity after ma
 
 The file `parsing_result.txt` contains the final parsing accuracy using EVALB
 
+# Pretrained Generative Model
+As the generative model takes a while to train, a pretrained model is available here: https://drive.google.com/open?id=0Bz1ZN2dBHG1dNTRYbmEwNUtoa0E
+
+Since CNN/DyNet relies on Boost to serialize and save/load the model, using this pretrained model requires using boost version 1.60.0 to compile the system. It is important to specify the same training set and clusters in order to load the model (otherwise the model cannot be loaded). Here is the command for training the pretrained model:
+
+	build/nt-parser/nt-parser-gen -x -T /usr1/home/akuncoro/rnng-dataset/english/train-gen.oracle -d /usr1/home/akuncoro/rnng-dataset/english/dev-gen.oracle -t --clusters /usr1/home/akuncoro/rnng-dataset/english/clusters-train-berk.txt --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -D 0.3
+
+The clusters that we used is the "clusters-train-berk.txt", and please contact us to get access to the oracle due to PTB licensing issues.
+
+# Pretrained Discriminative Model Tree Samples For Reranking
+To get tree samples from the discriminative models (in order to use the generative model to rescore these samples), please find "test-samples.props" here: https://drive.google.com/open?id=0Bz1ZN2dBHG1dTTZXc2FBOXZObm8
+
+# Acknowledgments
+We thank Daniel Fried for discovering a bug in the discriminative model.
+
 # Contact
 If there are any issues, please let us know at adhiguna.kuncoro [ AT SYMBOL ] gmail.com, miguel.ballesteros [AT SYMBOL] ibm.com, and cdyer [AT SYMBOL] cs.cmu.edu
 
