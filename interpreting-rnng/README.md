@@ -2,7 +2,7 @@
 Code for the [What Do Recurrent Neural Network Grammars Learn About Syntax?](https://arxiv.org/abs/1611.05774) paper (EACL 2017), by Adhiguna Kuncoro, Miguel Ballesteros, Lingpeng Kong, Chris Dyer, Graham Neubig, and Noah A. Smith. 
 
 # Release
-We will release the code for the gated attention RNNG (GA-RNNG) and pretrained models before the EACL 2017 conference.
+The code is `nt-parser-gen-attention-gated-stack-only.cc`. The simplest step to run the code is to copy it to the `nt-parser` directory and modify the `nt-parser/CMakeLists.txt` file to include and also build this one, and then follow the similar steps as with running the original RNNG.
 
 # Citation
 				@inproceedings{kuncoro-rnng:17,
