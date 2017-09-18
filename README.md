@@ -61,7 +61,7 @@ The training log is printed to `log.txt` (including information on where the par
 
     build/nt-parser/nt-parser --cnn-mem 1700 -x -T [training_oracle_file] -p [test_oracle_file] -C [original_test_file (PTB bracketed format, see sample_input_english.txt)] -P --pretrained_dim [dimension of pre-trained word embedding] -w [pre-trained word embedding] --lstm_input_dim 128 --hidden_dim 128 -m [parameter file] > output.txt
 
-Note: the output will be stored in `/tmp/parse/parser_test_eval.xxxx.txt` and the parser will output F1 score calculated with EVALB with COLLINS.prm option. The parameter file (following the -m in the command above) can be obtained from `log.txt`.       
+Note: the output will be stored in `/tmp/parser_test_eval.xxxx.txt` and the parser will output F1 score calculated with EVALB with COLLINS.prm option. The `xxxx` in `/tmp/parser_test_eval.xxxx.txt` can be obtained from the process ID of the decoding process (this is NOT the process ID of the training process). In contrast, the `parameter file` (following the -m in the decoding command above) can be obtained from `log.txt` file that logs the training process (e.g. there will be a line near the top of `log.txt` that for instance will say `PARAMETER FILE: ntparse_0_2_32_128_16_128-pid138938.params`. In that case, the decoding option should specify `-m ntparse_0_2_32_128_16_128-pid138938.params`       
 
 If training was done using pre-trained word embedding (by specifying the -w and --pretrained\_dim options) or POS tags (-P option), then decoding must alo use the exact same options used for training.
 
