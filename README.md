@@ -42,6 +42,9 @@ The script to obtain the oracle also converts singletons in the training set and
     python get_oracle_gen.py [training file] [dev file] > dev_gen.oracle
     python get_oracle_gen.py [training file] [test file] > test_gen.oracle
 
+### Removing sentences that start with '#' from the oracle
+In the training file of the PTB, there is one sentence that starts with '#'. This breaks the oracle format. To fix this, remove lines 2251062-2251105 from train.oracle and lines 2183922-2183963 from `train_gen.oracle` (the exact lines are applicable when using the same PTB version and when using Sections 02-21 for training, which is the standard training split).
+
 # Discriminative Model
 The discriminative variant of the RNNG is used as a proposal distribution for decoding the generative model (although it can also be used for decoding on its own). To save time we recommend training both models in parallel.      
      
@@ -70,6 +73,15 @@ If training was done using pre-trained word embedding (by specifying the -w and 
 # Generative Model
 The generative model achieved state of the art results, and decoding is done using sampled trees from the trained discriminative model     
 For the best results the generative model takes about 7 days to converge.
+
+### Obtain the word clusters file
+The class-factored softmax requires word clusters. This is obtained using Brown clustering. The file `clusters-train-berk.txt` can be used here, although this can also be obtained from scratch using [Percy Liang's Brown clustering code] (https://github.com/percyliang/brown-cluster). The following command was used to generate `clusters-train-berk.txt`:
+
+    python get_unkified_terminals.py -p train_gen.oracle > train-terms.txt
+
+After that, using the Brown clustering code:
+
+    ./wcluster --text ~/rnng_public_test_newest/rnng/train-terms.txt --c 140
 
 ### Training the generative model
     nohup build/nt-parser/nt-parser-gen -x -T [training_oracle_generative] -d [dev_oracle_generative] -t --clusters clusters-train-berk.txt --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -D 0.3 > log_gen.txt
