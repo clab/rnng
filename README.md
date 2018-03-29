@@ -43,7 +43,7 @@ The script to obtain the oracle also converts singletons in the training set and
     python get_oracle_gen.py [training file] [test file] > test_gen.oracle
 
 ### Removing sentences that start with '#' from the oracle
-In the training file of the PTB, there is one sentence that starts with '#'. This breaks the oracle format. To fix this, remove lines 2251062-2251105 from train.oracle and lines 2183922-2183963 from `train_gen.oracle` (the exact lines are applicable when using the same PTB version and when using Sections 02-21 for training, which is the standard training split).
+In the training file of the PTB, there is one sentence that starts with '#'. This breaks the oracle format. To fix this, remove lines 2251062-2251105 from train.oracle and lines 2183922-2183963 from `train_gen.oracle` (the exact lines are applicable when using the same PTB version and when using Sections 02-21 for training, which is the standard training split). The corresponding tree entry that needs to be removed is the following: `(NP (NP (QP (# #) (CD 200) (CD million))) (PP (IN of) (NP (NP (JJ undated) (JJ variable-rate) (NNS notes)) (VP (VBN priced) (PP (IN at) (NP (JJ par))) (PP (IN via) (NP (NNP Merill) (NNP Lynch) (NNP International) (NNP Ltd)))))) (. .))`, which is on line 33571 of the PTB training file.
 
 # Discriminative Model
 The discriminative variant of the RNNG is used as a proposal distribution for decoding the generative model (although it can also be used for decoding on its own). To save time we recommend training both models in parallel.      
