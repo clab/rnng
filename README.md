@@ -129,7 +129,7 @@ The file `llh.txt` would contain the final language modeling perplexity after ma
 The file `parsing_result.txt` contains the final parsing accuracy using EVALB
 
 # Pretrained Generative Model
-As the generative model takes a while to train, a pretrained model is available here: https://drive.google.com/open?id=0Bz1ZN2dBHG1dNTRYbmEwNUtoa0E
+As the generative model takes a while to train, a pretrained model is available here: https://drive.google.com/open?id=1E0lrR5sypgiYsYQmIdYN6TKVds22ApXa (version as of Apr 16 2018)
 
 Since CNN/DyNet relies on Boost to serialize and save/load the model, using this pretrained model requires using boost version 1.60.0 to compile the system. It is important to specify the same training set and clusters in order to load the model (otherwise the model cannot be loaded). Here is the command for training the pretrained model:
 
