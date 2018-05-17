@@ -85,6 +85,8 @@ After that, using the Brown clustering code:
 
 The resulting file is under `train-terms-c140-p1.out/paths`, which can be renamed to `clusters-train-berk.txt`. 
 
+For new datasets (diff to the penn treebank), it is highly recommended to generate new clusters following the steps shown above.
+
 ### Training the generative model
     nohup build/nt-parser/nt-parser-gen -x -T [training_oracle_generative] -d [dev_oracle_generative] -t --clusters clusters-train-berk.txt --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -D 0.3 > log_gen.txt
 
